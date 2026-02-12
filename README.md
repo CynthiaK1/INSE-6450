@@ -1,9 +1,39 @@
 # RobustOps
 
-**CI/CD-Integrated Adversarial Robustness Testing and ML Risk Scoring**
+CI/CD-Integrated Adversarial Robustness Testing and ML Risk Scoring  
+INSE 6450 — AI in Systems Engineering | Winter 2026  
+Cynthia Musila — 40311473  
 
-INSE 6450 — AI in Systems Engineering | Winter 2026
-Cynthia Musila — 40311473
+---
+
+## Milestone 1 Notebook (Primary Entry Point)
+
+For Milestone 1, the complete end-to-end implementation is provided in:
+
+RobustOps_Milestone1.ipynb
+
+The notebook contains:
+
+- ResNet-18 training on CIFAR-10  
+- Implementation of FGSM and PGD adversarial attacks  
+- Generation of adversarial telemetry (80,000 records)  
+- Robustness feature engineering  
+- Composite Robustness Risk Score computation  
+- Deploy/Block gate decision logic  
+- Exploratory Data Analysis (EDA) and visualization  
+- Final risk report generation  
+
+The notebook is fully self-contained and documents:
+
+- Dataset profiling and validation  
+- Model convergence behavior  
+- Adversarial accuracy degradation across perturbation budgets  
+- Per-class attack success rates  
+- Confidence drop analysis  
+- Risk score monotonicity with increasing epsilon  
+
+For Milestone 1, the notebook should be considered the primary artifact.
+
 
 ## Overview
 
