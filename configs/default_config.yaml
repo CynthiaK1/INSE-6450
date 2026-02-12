@@ -1,0 +1,35 @@
+# RobustOps Default Configuration
+
+model:
+  architecture: resnet18
+  num_classes: 10
+  pretrained: false
+  checkpoint_path: outputs/resnet18_cifar10.pth
+
+data:
+  dataset: cifar10
+  data_dir: data/
+  batch_size: 128
+  num_workers: 2
+
+attacks:
+  - type: fgsm
+    epsilons: [0.01, 0.02, 0.04, 0.08]
+  - type: pgd
+    epsilons: [0.01, 0.02, 0.04, 0.08]
+    pgd_steps: 10
+    pgd_alpha: 0.005
+
+risk_scoring:
+  weights:
+    accuracy_drop: 0.35
+    confidence_drop: 0.25
+    attack_success_rate: 0.25
+    worst_class_asr: 0.15
+  deploy_threshold: 0.5  # block deployment if risk score > threshold
+
+outputs:
+  telemetry_path: outputs/adversarial_telemetry.csv
+  features_path: outputs/robustness_features.csv
+  risk_report_path: outputs/risk_report.csv
+  plots_dir: outputs/plots/
