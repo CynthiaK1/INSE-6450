@@ -1,0 +1,25 @@
+{
+  "id": "audit_2026_04_12_001",
+  "diagnose": {
+    "shift_type": "concept",
+    "d_px": 0.107,
+    "d_pyx": 1.29,
+    "d_py": 0.033
+  },
+  "score": {
+    "risk": 0.48,
+    "decision": "ABSTAIN"
+  },
+  "mitigate": {
+    "action": "abstain_and_alert",
+    "reason": "concept drift detected"
+  },
+  "observe": {
+    "top_k_samples": [
+      12,
+      47,
+      203
+    ],
+    "hitl_queue_id": "review_88"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "report_path": "/workspace/robustops_addons/rag/report.md",
+  "mil_results_csv": "/workspace/robustops_addons/experiments/mil_results.csv",
+  "audit_log": "/workspace/audit.json",
+  "mil_summary": {
+    "psi": {
+      "mean": 0.25880000000000003,
+      "std": 0.10912714920622434
+    },
+    "isoforest": {
+      "mean": 0.6939999999999997,
+      "std": 0.0540974177964614
+    },
+    "c2st": {
+      "mean": 0.3788,
+      "std": 0.07072914706751354
+    },
+    "knn": {
+      "mean": 0.9032000000000001,
+      "std": 0.027806914424220435
+    },
+    "attention_mil": {
+      "mean": 0.46880000000000005,
+      "std": 0.07319640896734131
+    }
+  }
+}
