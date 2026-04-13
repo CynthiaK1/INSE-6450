@@ -1,0 +1,3 @@
+exp,r2_orig,r2_drift,verdict,base_clean,aug_clean,drift_acc,clean_delta
+2a_replay_on_concept,0.6546324030173576,0.14408258326153311,FAIL,,,,
+2b_advtrain_on_cov,,,,0.8764459002968574,0.8739891493499846,0.7724434435459105,-0.00245675094687281
