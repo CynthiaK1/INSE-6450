@@ -1,1 +1,310 @@
-
+{
+  "resnet_acc": 0.8555,
+  "distil_acc": 0.9048165137614679,
+  "adult_acc": 0.8775719111475074,
+  "cal_r2": 0.8408715984779023,
+  "diagnosis": [
+    {
+      "modality": "tab_cls",
+      "drift": "drift1",
+      "P(X)": 0.004809549078345299,
+      "P(Y|X)": 0.0016257153113063433,
+      "P(Y)": 4.789041565061037e-05,
+      "diagnosis": "none"
+    },
+    {
+      "modality": "tab_cls",
+      "drift": "drift2",
+      "P(X)": 0.004809549078345299,
+      "P(Y|X)": 0.01600059752608969,
+      "P(Y)": 0.00029337865992147376,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "tab_cls",
+      "drift": "drift3",
+      "P(X)": 0.004809549078345299,
+      "P(Y|X)": 0.008424437079923849,
+      "P(Y)": 0.010722577437591089,
+      "diagnosis": "label"
+    },
+    {
+      "modality": "tab_reg",
+      "drift": "drift1",
+      "P(X)": 0.0912451446056366,
+      "P(Y|X)": 0.9918549656867981,
+      "P(Y)": 0.0487548973730322,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "tab_reg",
+      "drift": "drift2",
+      "P(X)": 0.10593559592962265,
+      "P(Y|X)": 1.0889415740966797,
+      "P(Y)": 0.07963600866583109,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "tab_reg",
+      "drift": "drift3",
+      "P(X)": 0.10666976124048233,
+      "P(Y|X)": 1.2899364233016968,
+      "P(Y)": 0.033045104847041096,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "image",
+      "drift": "drift1",
+      "P(X)": 0.00558827817440033,
+      "P(Y|X)": 0.0019779218714716645,
+      "P(Y)": 0.001668197232042644,
+      "diagnosis": "none"
+    },
+    {
+      "modality": "image",
+      "drift": "drift2",
+      "P(X)": 0.010432131588459015,
+      "P(Y|X)": 0.01660102349867644,
+      "P(Y)": 0.004250665536013315,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "image",
+      "drift": "drift3",
+      "P(X)": 0.025861434638500214,
+      "P(Y|X)": 0.06639818811058205,
+      "P(Y)": 0.0030193000620208532,
+      "diagnosis": "concept"
+    },
+    {
+      "modality": "nlp",
+      "drift": "drift1",
+      "P(X)": 1.6156270503997803,
+      "P(Y|X)": 3.200238934824304e-05,
+      "P(Y)": 2.000201338106934e-06,
+      "diagnosis": "covariate"
+    },
+    {
+      "modality": "nlp",
+      "drift": "drift2",
+      "P(X)": 1.9025804996490479,
+      "P(Y|X)": 3.200238934824304e-05,
+      "P(Y)": 2.000393395634151e-06,
+      "diagnosis": "covariate"
+    },
+    {
+      "modality": "nlp",
+      "drift": "drift3",
+      "P(X)": 1.9110758304595947,
+      "P(Y|X)": 0.00012803824565489532,
+      "P(Y)": 0.0008830554050354242,
+      "diagnosis": "covariate"
+    }
+  ],
+  "mitigation": [
+    {
+      "exp": "2a_replay_on_concept",
+      "r2_orig": 0.6873731865511048,
+      "r2_drift": 0.4352667471868703,
+      "verdict": "OK"
+    },
+    {
+      "exp": "2b_advtrain_mlp_on_cov",
+      "base_clean": 0.8563824342307299,
+      "adv_clean": 0.8522878493192753,
+      "clean_delta": -0.004094584911454646,
+      "base_drift": 0.7381512949124782,
+      "adv_drift": 0.7104104821373733
+    }
+  ],
+  "risk_ablation": [
+    {
+      "weights": "default",
+      "sigma": 0.0,
+      "risk": 0.4,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "default",
+      "sigma": 0.5,
+      "risk": 0.4418108301770908,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "default",
+      "sigma": 1.0,
+      "risk": 0.49694953424096644,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "default",
+      "sigma": 1.5,
+      "risk": 0.4996263691268298,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "default",
+      "sigma": 2.0,
+      "risk": 0.4759954959565974,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "default",
+      "sigma": 2.5,
+      "risk": 0.44829562903060705,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 0.0,
+      "risk": 0.5,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 0.5,
+      "risk": 0.529864878697922,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 1.0,
+      "risk": 0.5692496673149761,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 1.5,
+      "risk": 0.5646176681338929,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 2.0,
+      "risk": 0.5339850547650733,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "equal",
+      "sigma": 2.5,
+      "risk": 0.5046575903367796,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 0.0,
+      "risk": 0.2,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 0.5,
+      "risk": 0.2716757088750128,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 1.0,
+      "risk": 0.36619920155594243,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 1.5,
+      "risk": 0.4008905722182414,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 2.0,
+      "risk": 0.42364622786365036,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "acc_dom",
+      "sigma": 2.5,
+      "risk": 0.42005322960384894,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 0.0,
+      "risk": 0.8,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 0.5,
+      "risk": 0.8119459514791687,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 1.0,
+      "risk": 0.8276998669259903,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 1.5,
+      "risk": 0.7800388985566586,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 2.0,
+      "risk": 0.6715119254785546,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "adv_dom",
+      "sigma": 2.5,
+      "risk": 0.592988023339134,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 0.0,
+      "risk": 0.30000000000000004,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 0.5,
+      "risk": 0.3119459514791688,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 1.0,
+      "risk": 0.3276998669259904,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 1.5,
+      "risk": 0.31668543351417755,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 2.0,
+      "risk": 0.2851776026205344,
+      "gate": "BLOCK"
+    },
+    {
+      "weights": "conf_dom",
+      "sigma": 2.5,
+      "risk": 0.2600880335755963,
+      "gate": "BLOCK"
+    }
+  ],
+  "attribution": {
+    "mil_mean": 0.193,
+    "mil_std": 0.0743706931526122,
+    "psi_mean": 0.14799999999999996,
+    "psi_std": 0.10665833300778707,
+    "trials": 20,
+    "k": 50
+  }
+}
